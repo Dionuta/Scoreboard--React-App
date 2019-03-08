@@ -1,0 +1,7 @@
+{
+  "name": "scoreboard",
+  "version": "1.0.0",
+  "main": "app.js",
+  "author": "Dionuta <diounta@gmail.com>",
+  "license": "MIT"
+}
