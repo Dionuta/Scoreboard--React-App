@@ -1,4 +1,4 @@
-const players = [ 
+const players = [
     {
         name: "Guil",
         score: 50,
@@ -30,29 +30,36 @@ const Header = ({ title, totalPlayers }) => {
     );
 };
 
-const Player = ({ name, score }) => {  // used Destructuring to pass name and score prop to counter 
+const Player = ({ name }) => {  // used Destructuring to pass name and score prop to counter 
     return (
         <div className='player'>
             <span className='player-name'>
                 {name}
             </span>
             <Counter
-                score={score}
+
             />
         </div>
     );
 }
+class Counter extends React.Component {  // score was passed down from Player 
 
-const Counter = ({ score }) => {  // score was passed down from Player 
-    return (
-        <div className='counter'>
-            <button className='counter-action decrement'> - </button>
-            <span className="counter-score">{score}</span>
-            <button className='counter-action increment'> + </button>
-        </div>
-    );
+        state = {
+            score: 0
+        };
+    
+
+    render() {
+        const { score } = this.state;
+        return (
+            <div className='counter'>
+                <button className='counter-action decrement'> - </button>
+                <span className="counter-score">{score}</span>
+                <button className='counter-action increment'> + </button>
+            </div>
+        );
+    }
 }
-
 const App = ({ initialPlayers }) => {
     return (
         <div className='scoreboard'>
@@ -62,10 +69,11 @@ const App = ({ initialPlayers }) => {
             />
 
             {/* Player List */}
-            {initialPlayers.map( player =>
+            {initialPlayers.map(player =>
                 <Player
-                   {...player}
-                    key={player.id.toString()}
+                  name={player.name}
+                  id={player.id}
+                  key={player.id.toString()}
                 />
             )}
         </div>
