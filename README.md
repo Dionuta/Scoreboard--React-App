@@ -9,7 +9,8 @@ The goal of this project is to create a dynamic scoreboard using React.
   <li>Destructuring props to make them more readable </li>
   <li>Basic setup for React </li>
   <li> Why keys are important </li>
-      </ul>
+   </ul>
       
    <h4>Project So Far: </h4>
+   
 [![Image from Gyazo](https://i.gyazo.com/05e9577688302fef0f56ff21b6418d64.gif)](https://gyazo.com/05e9577688302fef0f56ff21b6418d64)
