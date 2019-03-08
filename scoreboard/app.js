@@ -53,7 +53,7 @@ class Counter extends React.Component {  // score was passed down from Player
     }
 }
 class App extends React.Component {
-    state = {
+    state = {  //No need for constructor thanks to ES6
         players: [{
             name: "Guil",
             id: 1
