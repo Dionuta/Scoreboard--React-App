@@ -5,10 +5,6 @@ import Header from './Header';
 import Player from './Player';
 
 
-
-
-
-
 class App extends Component {
   state = {
     players: [
