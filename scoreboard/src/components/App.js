@@ -4,6 +4,8 @@ import Header from './Header';
 
 import Player from './Player';
 
+import AddPlayerForm from './AddPlayerForm'
+
 
 class App extends Component {
   state = {
@@ -28,7 +30,8 @@ class App extends Component {
         score: 0,
         id: 4
       }
-    ]
+    ],
+    player: ''
   };
 
   handleScore = (index, delta) => {
@@ -38,6 +41,22 @@ class App extends Component {
     
   }
 
+  
+  handleAddPlayer = (name) => {
+    this.setState(prevState => { 
+      return {
+      players: [...prevState.players, 
+        {
+          name: name,
+          score: 0,
+          id: Date.now()
+      }], 
+      player: '' 
+      }
+    });
+  };
+
+
   handleRemovePlayer = (id) => {
     this.setState(prevState => {
       return {
@@ -45,7 +64,6 @@ class App extends Component {
       };
     });
   }
-
 
 
   render() {
@@ -68,6 +86,9 @@ class App extends Component {
             removePlayer={this.handleRemovePlayer}
           />
         )}
+        <AddPlayerForm
+        addPlayer={this.handleAddPlayer}
+         />
       </div>
     );
   }
