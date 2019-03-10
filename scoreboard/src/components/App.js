@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Header = (props) => {
+const Header = ({title, totalPlayers}) => {
   return (
     <header>
-      <h1>{ props.title }</h1>
-      <span className="stats">Players: {props.totalPlayers}</span> 
+      <h1>{ title }</h1>
+      <span className="stats">Players: {totalPlayers}</span> 
     </header>
   );
 }
@@ -27,22 +27,23 @@ class Counter extends React.Component {
   }
 
   render() {
+    const{decrementScore, incrementScore}=this;
     return (
       <div className="counter">
-        <button className="counter-action decrement" onClick={this.decrementScore}> - </button>
+        <button className="counter-action decrement" onClick={decrementScore}> - </button>
         <span className="counter-score">{ this.state.score }</span>
-        <button className="counter-action increment" onClick={this.incrementScore}> + </button>
+        <button className="counter-action increment" onClick={incrementScore}> + </button>
       </div>
     );
   }
 }
   
-const Player = (props) => {
+const Player = ({name, removePlayer, id}) => {
   return (
     <div className="player">
       <span className="player-name">
-        <button className="remove-player" onClick={() => props.removePlayer(props.id)}>✖</button>
-        { props.name }
+        <button className="remove-player" onClick={() =>removePlayer(id)}>✖</button>
+        { name }
       </span>
 
       <Counter />
@@ -81,18 +82,18 @@ class App extends React.Component {
   }
 
   render() {
+    const{players} = this.state
     return (
       <div className="scoreboard">
         <Header 
           title="Scoreboard" 
-          totalPlayers={this.state.players.length} 
+          totalPlayers={players.length} 
         />
   
         {/* Players list */}
-        {this.state.players.map( player =>
+        {players.map( player =>
           <Player 
-            name={player.name}
-            id={player.id}
+            {...player}
             key={player.id.toString()} 
             removePlayer={this.handleRemovePlayer}           
           />
