@@ -1,57 +1,15 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-const Header = ({title, totalPlayers}) => {
-  return (
-    <header>
-      <h1>{ title }</h1>
-      <span className="stats">Players: {totalPlayers}</span> 
-    </header>
-  );
-}
+import Header from './Header';
 
-class Counter extends React.Component {
-  state = { 
-    score: 0 
-  };
-  
-  incrementScore = () => {
-    this.setState( prevState => ({
-      score: prevState.score + 1
-    }));
-  }
+import Player from './Player';
 
-  decrementScore = () => {
-    this.setState( prevState => ({
-      score: prevState.score - 1
-    }));
-  }
 
-  render() {
-    const{decrementScore, incrementScore}=this;
-    return (
-      <div className="counter">
-        <button className="counter-action decrement" onClick={decrementScore}> - </button>
-        <span className="counter-score">{ this.state.score }</span>
-        <button className="counter-action increment" onClick={incrementScore}> + </button>
-      </div>
-    );
-  }
-}
-  
-const Player = ({name, removePlayer, id}) => {
-  return (
-    <div className="player">
-      <span className="player-name">
-        <button className="remove-player" onClick={() =>removePlayer(id)}>✖</button>
-        { name }
-      </span>
 
-      <Counter />
-    </div>
-  );
-}
 
-class App extends React.Component {
+
+
+class App extends Component {
   state = {
     players: [
       {
@@ -74,7 +32,7 @@ class App extends React.Component {
   };
 
   handleRemovePlayer = (id) => {
-    this.setState( prevState => {
+    this.setState(prevState => {
       return {
         players: prevState.players.filter(p => p.id !== id)
       };
@@ -82,20 +40,20 @@ class App extends React.Component {
   }
 
   render() {
-    const{players} = this.state
+    const { players } = this.state
     return (
       <div className="scoreboard">
-        <Header 
-          title="Scoreboard" 
-          totalPlayers={players.length} 
+        <Header
+          title="Scoreboard"
+          totalPlayers={players.length}
         />
-  
+
         {/* Players list */}
-        {players.map( player =>
-          <Player 
+        {players.map(player =>
+          <Player
             {...player}
-            key={player.id.toString()} 
-            removePlayer={this.handleRemovePlayer}           
+            key={player.id.toString()}
+            removePlayer={this.handleRemovePlayer}
           />
         )}
       </div>
