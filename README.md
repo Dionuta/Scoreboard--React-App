@@ -31,7 +31,7 @@ The goal of this project is to create a dynamic scoreboard using React.
 
 # Phase Three: 
 
-   <h3> What was learned? </h3>
+   <h3> What was learned?  </h3>
       <ul>
   <li>Create React App</li>
   <li>Unidirectional Data Flow</li>
