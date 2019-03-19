@@ -3,7 +3,8 @@ import React, {Component} from 'react'
 
 class StopWatch extends Component {
     state ={
-        isRunning : flase
+        isRunning : false
+        
     }
     render() {
         return (
