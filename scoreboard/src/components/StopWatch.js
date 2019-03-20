@@ -13,6 +13,10 @@ class StopWatch extends Component {
        this.invervalID = setInterval(() => this.tick(), 100)
    }
 
+   componentWillUnmount() {
+       clearInterval(this.invervalID);
+   }
+
     tick = () => {
       if(this.state.isRunning){
           const now = Date.now();
