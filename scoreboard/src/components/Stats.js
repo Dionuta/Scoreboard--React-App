@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 
 const Stats = ({players}) => {
 const totalPoints = players.reduce( (total, player) =>{
@@ -21,6 +22,8 @@ const totalPoints = players.reduce( (total, player) =>{
     )
 }
 
-
+Stats.propTypes ={
+    players:PropTypes.arrayOf(PropTypes.object)
+}
 
 export default Stats;
