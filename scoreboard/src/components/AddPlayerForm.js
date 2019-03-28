@@ -8,6 +8,7 @@ class AddPlayerForm extends Component {
     handelSubmit = (event) => {
         event.preventDefault();
         this.props.addPlayer(this.playerInput.current.value)
+        event.currentTarget.reset();
     }
 
 
