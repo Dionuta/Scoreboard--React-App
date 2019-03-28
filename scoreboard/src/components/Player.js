@@ -6,7 +6,14 @@ class Player extends PureComponent {
 
     
     render(){
-    const{ name, removePlayer, id, score, changeScore, index}=this.props
+    const{ 
+        name, 
+        removePlayer,
+        id, 
+        score,
+         changeScore,
+          index
+        }=this.props
     return (
         <div className="player">
             <span className="player-name">
