@@ -27,7 +27,7 @@ class AddPlayerForm extends Component {
 
                 />
             </form>
-        )
+        ) 
     }
 }
 
