@@ -1,6 +1,9 @@
 # Scoreboard--React-App
 The goal of this project is to create a dynamic scoreboard using React.
 
+# Project Set Up
+ cd into project and run yarn install or npm install to retrieve the client side dependencies.
+ RUN yarn start or npm start to fire up your React application.
 
 # Phase One: 
   <h3> What was learned? </h3>
