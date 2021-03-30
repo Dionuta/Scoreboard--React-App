@@ -5448,11 +5448,6 @@ promise@8.0.1:
   dependencies:
     asap "~2.0.3"
 
-prop-type@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/prop-type/-/prop-type-0.0.1.tgz#4a211359cc622f7d2d1eee14d34afb7dfe7ea64e"
-  integrity sha1-SiETWcxiL30tHu4U00r7ff5+pk4=
-
 prop-types@^15.5.10:
   version "15.6.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.2.tgz#05d5ca77b4453e985d60fc7ff8c859094a497102"
@@ -7157,8 +7152,9 @@ xtend@^4.0.0:
   resolved "https://registry.yarnpkg.com/xtend/-/xtend-4.0.1.tgz#a5c6d532be656e23db820efb943a1f04998d63af"
 
 y18n@^3.2.1:
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/y18n/-/y18n-3.2.1.tgz#6d15fba884c08679c0d77e88e7759e811e07fa41"
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/y18n/-/y18n-3.2.2.tgz#85c901bd6470ce71fc4bb723ad209b70f7f28696"
+  integrity sha512-uGZHXkHnhF0XeeAPgnKfPv1bgKAYyVvmNL1xlKsPYZPaIHxGti2hHqvOCQv71XMsLxu1QjergkqogUnms5D3YQ==
 
 yallist@^2.1.2:
   version "2.1.2"
